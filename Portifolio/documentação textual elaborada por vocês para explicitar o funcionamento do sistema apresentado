@@ -1,0 +1,44 @@
+Documentação do Sistema de Gerenciamento de Vendas
+Descrição Geral
+O sistema de gerenciamento de vendas foi projetado para organizar e monitorar as operações de uma empresa, garantindo o controle eficiente de clientes, pedidos e produtos. Ele possibilita a visualização das relações entre essas entidades, facilitando a administração e análise de dados.
+
+Entidades e Relacionamentos
+1. Cliente
+Representa os clientes cadastrados no sistema. Cada cliente pode fazer diversos pedidos.
+
+Atributos:
+ID_Cliente: Identificador único do cliente.
+Nome: Nome do cliente.
+2. Pedido
+Registra as compras realizadas pelos clientes. Cada pedido pertence a um cliente e pode conter diversos produtos.
+
+Atributos:
+ID_Pedido: Identificador único do pedido.
+Data: Data em que o pedido foi realizado.
+Valor_Total: Valor total do pedido.
+3. Produto
+Armazena as informações sobre os produtos disponíveis para venda. Um produto pode ser incluído em vários pedidos.
+
+Atributos:
+ID_Produto: Identificador único do produto.
+Nome: Nome do produto.
+Preço: Preço unitário do produto.
+4. Item_Pedido
+Entidade associativa entre pedidos e produtos. Registra os detalhes de cada produto incluído em um pedido.
+
+Atributos:
+ID_Item: Identificador único do item no pedido.
+Quantidade: Quantidade de unidades do produto no pedido.
+Regras de Negócio
+Um cliente pode realizar múltiplos pedidos, mas cada pedido é feito por apenas um cliente.
+Um pedido pode conter vários produtos, e um mesmo produto pode estar presente em diversos pedidos.
+O total do pedido é calculado com base na soma do preço dos produtos multiplicados por suas respectivas quantidades.
+Funcionamento
+Cadastro de Clientes:
+Os clientes são cadastrados no sistema com suas informações básicas (ID e Nome).
+Registro de Pedidos:
+Para cada pedido, é necessário associar um cliente, registrar a data e calcular o valor total.
+Gerenciamento de Produtos:
+Produtos são cadastrados com nome e preço, e seu estoque é atualizado conforme os pedidos são realizados.
+Associação entre Pedidos e Produtos:
+Cada produto incluso em um pedido é registrado na tabela Item_Pedido, com a quantidade correspondente.
